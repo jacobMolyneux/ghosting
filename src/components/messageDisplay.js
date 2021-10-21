@@ -2,6 +2,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { useState } from "react";
+import { MessageCard } from "./messageCard";
 
 const MessageSection = () => {
   let [messages, setMessages] = useState([
@@ -38,15 +39,7 @@ const MessageSection = () => {
     setMessages(messages.concat(newMessageInfo));
   };
   let messageDisplay = messages.map((message, index) => (
-    <Card
-      className="m-3 p-2"
-      border="primary"
-      style={{ width: "18rem" }}
-      key={index}
-    >
-      <Card.Header className="font-weight-bold">{message.author}</Card.Header>
-      <Card.Text className="p-3">{message.text}</Card.Text>
-    </Card>
+    <MessageCard author={message.author} text={message.text} key={index} />
   ));
   return (
     <div id="chatContainer" style={{ width: "70rem" }} className="border ">

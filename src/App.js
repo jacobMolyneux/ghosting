@@ -1,6 +1,7 @@
 import "./App.css";
 import { Homepage } from "./pages/homepage";
 import { AboutPage } from "./pages/about";
+import { LogInPage } from "./pages/loginPage";
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -14,6 +15,9 @@ export default function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
+              <Link to="/logIn">LogIn</Link>
+            </li>
+            <li>
               <Link to="/about">About</Link>
             </li>
           </ul>
@@ -24,6 +28,9 @@ export default function App() {
         <Switch>
           <Route path="/about">
             <AboutPage />
+          </Route>
+          <Route path="/logIn">
+            <LogInPage />
           </Route>
           <Route path="/">
             <Homepage />
