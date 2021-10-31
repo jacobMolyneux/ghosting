@@ -25,8 +25,11 @@ const LogInPage = () => {
       className="d-flex justify-content-center"
       style={{ width: "100%" }}
     >
-      <Form border="primary" style={{ width: "30rem" }}>
-        <Form.Group>
+      <Form className="border" style={{ width: "30rem" }}>
+        <div className="d-flex justify-content-center m-3">
+          <h1>Sign In</h1>
+        </div>
+        <Form.Group className="m-3">
           <Form.Label>
             <h1>Username</h1>
           </Form.Label>
@@ -36,7 +39,7 @@ const LogInPage = () => {
             onChange={handleUsernameChange}
           ></Form.Control>
         </Form.Group>
-        <Form.Group>
+        <Form.Group className="m-3">
           <Form.Label>
             <h1>Password</h1>
           </Form.Label>
@@ -46,7 +49,9 @@ const LogInPage = () => {
             onChange={handlePasswordChange}
           ></Form.Control>
         </Form.Group>
-        <Button onClick={handleSubmition}>LogIn</Button>
+        <Button onClick={handleSubmition} className="m-3">
+          LogIn
+        </Button>
       </Form>
     </Container>
   );

@@ -7,7 +7,19 @@ const MessageCard = (props) => {
   const viewMessage = () => {
     setViewed((viewed = true));
   };
-  if (viewed) {
+  if (viewed == false) {
+    return (
+      <Card
+        className="m-3 p-2"
+        border="primary"
+        style={{ width: "18rem" }}
+        onClick={viewMessage}
+      >
+        <Card.Text>Click to View</Card.Text>
+        <Card.Img variant="bottom" src={LockImage} />
+      </Card>
+    );
+  } else {
     return (
       <Card
         className="m-3 p-2"
@@ -19,18 +31,7 @@ const MessageCard = (props) => {
         <Card.Text className="p-3">{props.text}</Card.Text>
       </Card>
     );
-  } else {
-    return (
-      <Card
-        className="m-3 p-2"
-        border="primary"
-        style={{ width: "18rem" }}
-        onClick={viewMessage()}
-      >
-        <Card.Text>Click to View</Card.Text>
-        <Card.Img variant="bottom" src={LockImage} />
-      </Card>
-    );
   }
 };
+
 export { MessageCard };

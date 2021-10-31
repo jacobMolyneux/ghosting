@@ -6,45 +6,29 @@ import purpleModel from "../photos/purpleModel.jpg";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
+import ListGroup from "react-bootstrap/ListGroup";
+import "./componentStyles/chatsDisplay.css";
 
 const ChatsDisplay = () => {
   return (
-    <Container>
-      <Col>
-        <Row>
-          <Image
-            src={purpleModel}
-            alt="chat button"
-            style={{ width: "7rem", height: "7rem" }}
-            roundedCircle
-          />
-        </Row>
-        <Row>
-          <Image
-            src={blueDude}
-            alt="chat button"
-            style={{ width: "7rem", height: "7rem" }}
-            roundedCircle
-          />
-        </Row>
-        <Row>
-          <Image
-            src={goldWomen}
-            alt="chat button"
-            style={{ width: "7rem", height: "7rem" }}
-            roundedCircle
-          />
-        </Row>
-        <Row>
-          <Image
-            src={whiteDude}
-            alt="chat button"
-            style={{ width: "7rem", height: "7rem" }}
-            roundedCircle
-          />
-        </Row>
-      </Col>
-    </Container>
+    <ListGroup>
+      <ListGroup.Item className="d-flex" style={{ width: "20rem" }}>
+        <img id="ChatPhoto" src={whiteDude} alt="white guy chat" />
+        <h3>Robert</h3>
+      </ListGroup.Item>
+      <ListGroup.Item>
+        <img id="ChatPhoto" src={goldWomen} alt="Samantha Chat" />
+        <h3> Samantha</h3>
+      </ListGroup.Item>
+      <ListGroup.Item>
+        <img id="ChatPhoto" src={purpleModel} alt="Olivia" />
+        <h3>Olivia</h3>
+      </ListGroup.Item>
+      <ListGroup.Item>
+        <img id="ChatPhoto" src={blueDude} alt="Mitch" />
+        <h3>Mitch</h3>
+      </ListGroup.Item>
+    </ListGroup>
   );
 };
 export { ChatsDisplay };

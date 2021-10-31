@@ -1,4 +1,5 @@
 import "./App.css";
+import Nav from "react-bootstrap/Nav";
 import { Homepage } from "./pages/homepage";
 import { AboutPage } from "./pages/about";
 import { LogInPage } from "./pages/loginPage";
@@ -9,19 +10,17 @@ export default function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/logIn">LogIn</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-          </ul>
-        </nav>
+        <Nav className="justify-content-end p-3">
+          <Nav.Item className="m-3">
+            <Link to="/">Home</Link>
+          </Nav.Item>
+          <Nav.Item className="m-3">
+            <Link to="/logIn">LogIn</Link>
+          </Nav.Item>
+          <Nav.Item className="m-3">
+            <Link to="/about">About</Link>
+          </Nav.Item>
+        </Nav>
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
